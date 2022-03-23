@@ -4,7 +4,7 @@ import db
 def export_data():
     cnt = db.create_connection()
     sql_query = pd.read_sql_query('''
-                                select *, SUM(deposits) from car
+                                select SUM(deposits) as total_deposits from car
                                 '''
                                 , cnt) 
 
